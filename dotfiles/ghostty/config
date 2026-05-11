@@ -1,0 +1,6 @@
+theme = light:Flexoki Light,dark:Flexoki Dark
+font-family = "JetBrainsMono Nerd Font"
+font-size = 13
+scrollback-limit = 100000000
+window-inherit-working-directory = true
+config-file = ~/.config/ghostty/config.local

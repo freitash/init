@@ -1,0 +1,67 @@
+# ── signing ───────────────────────────────────────────────────────────────────
+
+[gpg]
+  format = ssh
+
+[gpg "ssh"]
+  allowedSignersFile = ~/.ssh/allowed_signers
+
+[commit]
+  gpgsign = true
+
+[tag]
+  gpgsign = true
+
+# ── defaults ──────────────────────────────────────────────────────────────────
+
+[init]
+  defaultBranch = main
+
+[pull]
+  rebase = true
+
+[push]
+  autoSetupRemote = true
+  followTags = true
+
+[rebase]
+  autoStash = true
+
+[merge]
+  conflictstyle = zdiff3
+
+[diff]
+  algorithm = histogram
+  colorMoved = default
+
+[fetch]
+  prune = true
+
+[rerere]
+  enabled = true
+
+[branch]
+  sort = -committerdate
+
+[alias]
+  # delete local branches whose upstream is gone (run after fetch --prune)
+  gone = "!git fetch --prune && git branch -vv | grep ': gone]' | awk '{print $1}' | xargs git branch -d"
+
+[core]
+  autocrlf = input
+  ignorecase = false
+  pager = delta
+
+[delta]
+  navigate = true
+  line-numbers = true
+  side-by-side = false
+
+[interactive]
+  diffFilter = delta --color-only
+
+# ── local overrides ───────────────────────────────────────────────────────────
+# Workspace paths and identities are written here by bootstrap — not versioned.
+
+[include]
+  path = ~/.gitconfig.local

@@ -1,0 +1,7 @@
+[user]
+  name       = PLACEHOLDER_NAME
+  email      = PLACEHOLDER_EMAIL
+  signingKey = PLACEHOLDER_KEY
+
+[core]
+  sshCommand = ssh -i PLACEHOLDER_SSH_KEY -o IdentitiesOnly=yes
